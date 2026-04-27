@@ -129,8 +129,8 @@ function App() {
         <h2>Loading...</h2>
       ) : (
         <div>
-          <h3>Add New Product</h3>
           <form onSubmit={handleSubmit} style={styles.form}>
+            <h3 style={{padding:'10px'}}>Add New Product</h3>
             <div style={styles.formfield}> 
               <div style={{display:"flex", flexDirection:"column", flex:1,paddingRight:"10px"}}>
                 <label style={styles.label} htmlFor="name">Name:</label>
