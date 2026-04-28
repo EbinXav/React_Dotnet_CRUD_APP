@@ -16,6 +16,7 @@ function App() {
     description:'',
     company:''
   });
+  const [categories]= useState(['Home','Office','Electronics','Clothing','Food','Books','Furniture']);
   useEffect(() => {
     loadproducts();
   }, []);
@@ -146,7 +147,15 @@ function App() {
               </div>
               <div style={{display:"flex", flexDirection:"column", flex:1,paddingRight:"10px"}}>
                 <label style={styles.label} htmlFor="category">Category:</label>
-                <input style={styles.input} type="text" name="category" value={formData.category} onChange={handleChange} required />
+                {/*<input style={styles.input} type="text" name="category" value={formData.category} onChange={handleChange} required />*/}
+                <select style={styles.input} type="text" name="category" value={formData.category} onChange={handleChange} required>
+                  <option value="">Select Category</option>
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div style={{display:"flex", flexDirection:"column", flex:1,paddingRight:"10px"}}>
                 <label style={styles.label} htmlFor="location">Location:</label>
