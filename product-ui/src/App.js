@@ -2,6 +2,7 @@ import { useEffect,useState } from 'react';
 import axios from 'axios';
 import './App.css';
 const API_URL = 'https://localhost:7159/api/products';
+const categories= ['Home','Office','Electronics','Clothing','Food','Books','Furniture'];
 function App() {
   const[products,setProducts]=useState([]);
   const [loading,setLoading]=useState(false);
@@ -16,7 +17,6 @@ function App() {
     description:'',
     company:''
   });
-  const [categories]= useState(['Home','Office','Electronics','Clothing','Food','Books','Furniture']);
   useEffect(() => {
     loadproducts();
   }, []);
